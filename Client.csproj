@@ -9,4 +9,10 @@
     <PackageReference Include="IdentityModel" Version="4.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="DealerSocket.Crm.Integrations.FacebookAudience">
+      <HintPath>..\..\..\..\..\..\git\dealersocket.crm.integrations\src\DealerSocket.Crm.Integrations.FacebookAudience\bin\DealerSocket.Crm.Integrations.FacebookAudience.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
