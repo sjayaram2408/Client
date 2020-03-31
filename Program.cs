@@ -1,4 +1,4 @@
-﻿using DealerSocket.Crm.Integrations.FacebookAudience.Models;
+﻿using Client.Models;
 using IdentityModel.Client;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -34,20 +34,20 @@ namespace Client
             {
                 Account = new Account
                 {
-                    Id = "exampleAdAccountId",
+                    Id = "2312694348987835",
                     AccessToken = "exampleAccessToken",
                     CustomAudienceId = "exampleCustomAudienceId"
                 },
                 AddressId = 1,
-                Description = "exampleDescription",
-                Name = "exampleName",
+                Description = "Testing to get custom response fields",
+                Name = "Test_fields",
                 SiteId = 3,
-                UseMock = true
+                UseMock = false
             };
             
             // call api
             var apiClient = new HttpClient();
-            apiClient.SetBearerToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IjVFMDJSYnBLZHhEZ0tWczlMSVhRN3lQcXFhOCIsImtpZCI6IjVFMDJSYnBLZHhEZ0tWczlMSVhRN3lQcXFhOCJ9.eyJpc3MiOiJodHRwczovL2xvY2FsLmRlYWxlcnNvY2tldC5jb20iLCJhdWQiOiJodHRwczovL2xvY2FsLmRlYWxlcnNvY2tldC5jb20vcmVzb3VyY2VzIiwiZXhwIjoxNTg1NTgwNzczLCJuYmYiOjE1ODU1NzM1NzMsImNsaWVudF9pZCI6ImNybV9ibGFja2JpcmQiLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiZW1haWwiLCJibGFja2JpcmQiLCJzZWFyY2giLCJhcGkiXSwic3ViIjoiMTAwMDk3IiwiYXV0aF90aW1lIjoxNTg1NTY2MzgyLCJpZHAiOiJpZHNydiIsImNybV9yb2xlIjoiYWRtaW4iLCJhZG1pbl9yb2xlIjoic3NvIiwiY3JtX3VzZXJuYW1lIjoiZnNhZmFpciIsImNybV9zdWIiOiJmc2FmYWlyIiwicHJvZHVjdCI6ImNybSIsImFtciI6WyJwYXNzd29yZCJdfQ.LWSvQNn7E2Bk37xJmLhq7-OrAznK12t3WAopnsQjpdHB2hbFiwI5qzftuXQPlCQ1BzDz6Z7y2lGs5c7Bv7D_SjdP8dIJmkOISbrJjAtbDQafvGuKXf0d-hBZAHCnckUD42OTL4piNo5JF4Hz-Y7brE9B3_axVHwmogundH20ZqTaRIvQg60f4y0KRBj3ZT8GGpBg7D95kTf1rJ0d7DBAk64nNwgJz1G--xrG2E8uky9-HeGIDrN7twnrEDNAJeQpmixr6xfb8uTNFI11PFN51GKERM9A1priINVeOOzcuGeXOq9em3g6PMpJ4NU9UEmFMNw12GstZqn-Npak5SguHQ");
+            apiClient.SetBearerToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IjVFMDJSYnBLZHhEZ0tWczlMSVhRN3lQcXFhOCIsImtpZCI6IjVFMDJSYnBLZHhEZ0tWczlMSVhRN3lQcXFhOCJ9.eyJpc3MiOiJodHRwczovL2xvY2FsLmRlYWxlcnNvY2tldC5jb20iLCJhdWQiOiJodHRwczovL2xvY2FsLmRlYWxlcnNvY2tldC5jb20vcmVzb3VyY2VzIiwiZXhwIjoxNTg1NjQ4MjYyLCJuYmYiOjE1ODU2NDEwNjIsImNsaWVudF9pZCI6ImNybV9ibGFja2JpcmQiLCJzY29wZSI6WyJvcGVuaWQiLCJwcm9maWxlIiwiZW1haWwiLCJibGFja2JpcmQiLCJzZWFyY2giLCJhcGkiXSwic3ViIjoiMTAwMDk3IiwiYXV0aF90aW1lIjoxNTg1NjQxMDU5LCJpZHAiOiJpZHNydiIsImNybV9yb2xlIjoiYWRtaW4iLCJhZG1pbl9yb2xlIjoic3NvIiwiY3JtX3VzZXJuYW1lIjoiZnNhZmFpciIsImNybV9zdWIiOiJmc2FmYWlyIiwicHJvZHVjdCI6ImNybSIsImFtciI6WyJwYXNzd29yZCJdfQ.Qmmu_GVov0y5vdGnXd_f0kPM6OoY7zsR1POULJJC8iBGIh9_BtpwGwx_c1YxdgXqjZlBcEkdCL1Io3EzeQDn_S7he8YyuNLJm5VADyKP3MsGAftHjAgujlFTqh_jByBzjizQ1wUAkwsUWrwElnbtiWDOOHpyXeCys7HLRehFqHWxTdVM2Roj7cSflJZuZYiTrKniPXUiJf9hAokFBq6a3NMhzB1a6fRh4dGdwx4umaIWZIQprXtKJQecFmyYNiYHidCW5E9vDLRVuh-qqlYCuZssJ4p7ScEndwaQMzaHsPg2Yx1u43396yF8olp9BlLXYND7uhfejTy0PSAgehTKHQ");
             var stringContent = new StringContent(JsonConvert.SerializeObject(facebookAudienceManager), Encoding.UTF8, "application/json");
             var response = await apiClient.PostAsync("https://localhost:5001/Facebook", stringContent);
             if (!response.IsSuccessStatusCode)
@@ -57,7 +57,7 @@ namespace Client
             else
             {
                 var content = await response.Content.ReadAsStringAsync();
-                //Console.WriteLine(JArray.Parse(content));
+                Console.WriteLine(content);
             }
         }
     }
